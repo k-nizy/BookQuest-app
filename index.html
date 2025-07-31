@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookQuest – Book Information & Discovery App</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Boxicons CDN -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <!-- Modern, premium font (not Roboto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png" />
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col font-inter">
+  <!-- Background image and overlay -->
+  <div class="bookquest-bg"></div>
+  <div class="bookquest-bg-overlay"></div>
+
+  <!-- Header -->
+  <header class="bookquest-header relative overflow-hidden z-10">
+    <div class="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between py-8">
+      <h1 class="text-4xl font-extrabold flex items-center gap-2 tracking-tight drop-shadow-lg">
+        <i class="bx bx-book-open text-blue-200 text-4xl"></i>
+        <span>BookQuest</span>
+      </h1>
+      <div class="flex items-center gap-4 mt-2 sm:mt-0">
+        <p class="text-blue-100 text-base font-medium">Book Information & Discovery App</p>
+        <!-- Dark mode toggle (optional/bonus) -->
+        <button id="dark-mode-toggle" aria-label="Toggle dark mode" class="bookquest-dark-toggle ml-4 bg-transparent flex items-center justify-center p-2 rounded-full shadow-none border-none">
+          <i id="dark-icon" class="bx bx-moon text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Decorative wave or glow effect -->
+    <div class="bookquest-header-wave"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 container mx-auto px-4 py-8 relative z-10">
+    <!-- Book Cover Image Slider (visible, above search bar) -->
+    <!-- Slider inspired by Codehal YouTube tutorial: https://youtu.be/McPdzhLRzCg?si=d23XAoU71GQ0wKgl -->
+    <section class="bookquest-slider-wrapper mb-8">
+      <div class="bookquest-slider relative overflow-hidden">
+        <button id="slider-prev" aria-label="Previous" class="bookquest-slider-btn bookquest-slider-btn-left absolute left-2 top-1/2 -translate-y-1/2 z-10">&#8592;</button>
+        <div id="bookquest-slider-track" class="bookquest-slider-track flex transition-transform duration-500 ease-in-out">
+          <!-- Slides will be injected by JS -->
+        </div>
+        <button id="slider-next" aria-label="Next" class="bookquest-slider-btn bookquest-slider-btn-right absolute right-2 top-1/2 -translate-y-1/2 z-10">&#8594;</button>
+      </div>
+    </section>
+    <!-- Search Bar -->
+    <form id="search-form" class="bookquest-searchbar flex flex-col sm:flex-row gap-4 items-center mb-8" autocomplete="off">
+      <label for="search-input" class="sr-only">Search for books</label>
+      <div class="bookquest-search-input flex-1 flex items-center relative">
+        <input id="search-input" type="text" placeholder="Search by title, author, or topic..." class="w-full px-5 py-3 rounded-xl bg-white/60 shadow-lg border border-gray-200 focus:outline-none focus:ring-4 focus:ring-blue-300/40 text-gray-900 transition-all duration-300 placeholder-gray-400 backdrop-blur-md" />
+        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-blue-400 pointer-events-none">
+          <i class="bx bx-search text-2xl"></i>
+        </span>
+      </div>
+      <button type="submit" class="bookquest-btn-search bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-700 hover:to-teal-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300/40 active:scale-95 flex items-center gap-2">
+        <i class="bx bx-search text-xl"></i>
+        <span>Search</span>
+      </button>
+    </form>
+
+    <!-- Filters & Sorting Controls -->
+    <div class="bookquest-filters flex flex-col md:flex-row md:items-end gap-6 mb-8 p-4 rounded-2xl bg-white/70 shadow-md backdrop-blur-md relative">
+      <!-- Category Filter -->
+      <div class="flex flex-col min-w-[180px]">
+        <label for="category-filter" class="block text-sm font-semibold text-gray-700 mb-2">Category/Genre</label>
+        <div class="relative">
+          <select id="category-filter" class="bookquest-select w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300/40 bg-white/80 text-gray-800 appearance-none transition-all duration-200">
+            <option value="">All Categories</option>
+            <!-- Dynamic options -->
+          </select>
+          <span class="bookquest-select-arrow absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-blue-400">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </div>
+      </div>
+      <!-- Publication Year Range Filter -->
+      <div class="flex gap-2 items-end">
+        <div class="flex flex-col">
+          <label for="year-min" class="block text-sm font-semibold text-gray-700 mb-2">Year From</label>
+          <input id="year-min" type="number" min="0" max="2100" placeholder="e.g. 2000" class="bookquest-input w-24 px-3 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300/40 bg-white/80 text-gray-800 transition-all duration-200" />
+        </div>
+        <span class="mb-4 text-gray-400 font-bold">–</span>
+        <div class="flex flex-col">
+          <label for="year-max" class="block text-sm font-semibold text-gray-700 mb-2">Year To</label>
+          <input id="year-max" type="number" min="0" max="2100" placeholder="e.g. 2010" class="bookquest-input w-24 px-3 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300/40 bg-white/80 text-gray-800 transition-all duration-200" />
+        </div>
+        <button id="year-filter-btn" type="button" class="ml-2 bookquest-btn-filter bg-gradient-to-r from-blue-500 to-teal-400 hover:from-blue-600 hover:to-teal-500 text-white px-4 py-2.5 rounded-lg shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300/40 active:scale-95 flex items-center gap-2">
+          <i class="bx bx-filter-alt text-lg"></i>
+          <span>Apply</span>
+        </button>
+      </div>
+      <!-- Sorting -->
+      <div class="md:ml-auto flex flex-col min-w-[200px]">
+        <label for="sort-select" class="block text-sm font-semibold text-gray-700 mb-2">Sort By</label>
+        <div class="relative">
+          <select id="sort-select" class="bookquest-select w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300/40 bg-white/80 text-gray-800 appearance-none transition-all duration-200">
+            <option value="title-asc">Title (A-Z)</option>
+            <option value="title-desc">Title (Z-A)</option>
+            <option value="author-asc">Author (A-Z)</option>
+            <option value="author-desc">Author (Z-A)</option>
+            <option value="date-desc">Publication Date (Newest First)</option>
+            <option value="date-asc">Publication Date (Oldest First)</option>
+            <option value="pages-asc">Page Count (Shortest First)</option>
+            <option value="pages-desc">Page Count (Longest First)</option>
+          </select>
+          <span class="bookquest-select-arrow absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-blue-400">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </div>
+      </div>
+      <!-- Clear Filters Button -->
+      <button id="clear-filters-btn" type="button" class="bookquest-btn-clear bg-gray-300 text-gray-800 hover:bg-gray-400 font-semibold px-5 py-2.5 rounded-lg shadow transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300/40 md:ml-6 mt-4 md:mt-0 flex items-center gap-2">
+        <i class="bx bx-x text-lg"></i>
+        <span>Clear Filters</span>
+      </button>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loading-indicator" class="hidden flex justify-center items-center py-12">
+      <div class="bookquest-loader"></div>
+      <span class="ml-4 text-blue-700 font-semibold text-lg">Loading...</span>
+    </div>
+
+    <!-- Book Results -->
+    <div id="results" class="bookquest-results grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+  </main>
+
+  <!-- Custom Modal for Notifications & Errors -->
+  <div id="modal-overlay" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+    <div id="modal-box" class="bookquest-modal bg-white/80 rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center relative backdrop-blur-lg animate-modal-in">
+      <button id="modal-close" class="absolute top-4 right-4 text-blue-600 hover:text-blue-800 bg-white/60 rounded-full p-2 shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300/40 flex items-center justify-center">
+        <i class="bx bx-x text-2xl"></i>
+      </button>
+      <div id="modal-message" class="text-gray-800 text-lg font-semibold mb-4"></div>
+    </div>
+    <div class="bookquest-modal-bg absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="bookquest-backtotop fixed bottom-4 right-4 z-50 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 hidden flex items-center justify-center" aria-label="Back to top">
+    <i class="bx bx-up-arrow-alt text-2xl"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-blue-50 to-teal-50 text-gray-500 text-center py-6 mt-auto shadow-inner z-10">
+    <span>&copy; 2024 BookQuest. Powered by Google Books API.</span>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html> 
