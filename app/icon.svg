@@ -1,0 +1,24 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Book background -->
+  <rect x="80" y="120" width="352" height="272" rx="8" fill="#7cf03d" stroke="#1f242d" stroke-width="4"/>
+  
+  <!-- Book pages -->
+  <rect x="96" y="136" width="320" height="240" rx="4" fill="#ffffff"/>
+  
+  <!-- Book spine -->
+  <rect x="80" y="120" width="16" height="272" fill="#1f242d"/>
+  
+  <!-- Book title lines -->
+  <rect x="120" y="160" width="200" height="8" rx="4" fill="#1f242d"/>
+  <rect x="120" y="180" width="160" height="6" rx="3" fill="#1f242d"/>
+  <rect x="120" y="200" width="180" height="6" rx="3" fill="#1f242d"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="140" cy="240" r="12" fill="#7cf03d"/>
+  <circle cx="180" cy="240" r="8" fill="#1f242d"/>
+  <circle cx="220" cy="240" r="8" fill="#1f242d"/>
+  
+  <!-- Bookmark -->
+  <rect x="360" y="140" width="8" height="40" fill="#ef4444"/>
+  <polygon points="360,140 368,140 364,148" fill="#ef4444"/>
+</svg> 
