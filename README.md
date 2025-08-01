@@ -2,7 +2,7 @@
 # BookQuest - Book Information & Discovery App
 ## Demo Video
 
-[Watch on YouTube](https://youtu.be/uTbP4lnBDpk)
+[Watch on YouTube](https://youtu.be/88D8OYHXf0k)
 <img width="1364" height="653" alt="Screenshot from 2025-07-31 23-52-55" src="https://github.com/user-attachments/assets/724c114f-303a-485e-b8a6-f748f669a6ce" />
 
 A modern, responsive web application for discovering and exploring books using the Google Books API. Built with vanilla JavaScript, Tailwind CSS, and Boxicons for a clean, professional user experience.
