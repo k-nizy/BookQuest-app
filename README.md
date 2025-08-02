@@ -30,9 +30,9 @@ A modern, containerized web application for discovering books with integrated he
 
 Watch the BookQuest application in action:
 
-[![BookQuest Demo Video](https://img.youtube.com/vi/-QMHfBQWQdE/maxresdefault.jpg)](https://youtu.be/-QMHfBQWQdE)
+[![BookQuest Demo Video](https://img.youtube.com/vi/-QMHfBQWQdE)]
 
-**[Watch Full Demo on YouTube](https://youtu.be/-QMHfBQWQdE)**
+
 
 
 
