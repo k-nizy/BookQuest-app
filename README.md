@@ -1,28 +1,41 @@
 
-BookQuest - Healthcare Literacy Book Discovery Platform
+# BookQuest - Healthcare Literacy Book Discovery Platform
 
 A modern, containerized web application for discovering books with integrated health literacy content. Built with Python Flask backend, responsive frontend, and load balancing support.
+
+
+
+[ Watch Demo Video](https://youtu.be/-QMHfBQWQdE) - See BookQuest in action!
+
+[![BookQuest Demo](https://img.youtube.com/vi/-QMHfBQWQdE/maxresdefault.jpg)](https://youtu.be/-QMHfBQWQdE)
 
   Features
 
  Core Functionality
-- **Book Search**: Search for books by title, author, or topic using Google Books API
-- **Health Literacy Integration**: Automatic health content suggestions for health-related searches
-- **Advanced Filtering & Sorting**: Filter by category, year range, and sort by multiple criteria
-- **Reading Lists**: Create and manage favorites, to-read, and completed lists
-- **Responsive Design**: Works perfectly on mobile, tablet, and desktop devices
+- Book Search: Search for books by title, author, or topic using Google Books API
+- Health Literacy Integration: Automatic health content suggestions for health-related searches
+- Advanced Filtering & Sorting: Filter by category, year range, and sort by multiple criteria
+- Reading Lists: Create and manage favorites, to-read, and completed lists
+- Responsive Design: Works perfectly on mobile, tablet, and desktop devices
 
  Technical Features
-- **Containerized Deployment**: Docker-based deployment with multi-stage builds
-- **Load Balancing**: HAProxy configuration for round-robin load balancing
-- **API Caching**: In-memory caching with TTL for improved performance
-- **Security**: Environment variable-based API key management
-- **Accessibility**: ARIA labels, keyboard support, high contrast, large touch targets
-- **Health Integration**: Healthcare literacy content from trusted sources
+- Containerized Deployment: Docker-based deployment with multi-stage builds
+- Load Balancing: HAProxy configuration for round-robin load balancing
+- API Caching: In-memory caching with TTL for improved performance
+- Security: Environment variable-based API key management
+- Accessibility: ARIA labels, keyboard support, high contrast, large touch targets
+- Health Integration: Healthcare literacy content from trusted sources
 
-  Screenshots
+## 🎥 Demo Video
 
-youtube link (https://youtu.be/-QMHfBQWQdE)
+Watch the BookQuest application in action:
+
+[![BookQuest Demo Video](https://img.youtube.com/vi/-QMHfBQWQdE/maxresdefault.jpg)](https://youtu.be/-QMHfBQWQdE)
+
+**[Watch Full Demo on YouTube](https://youtu.be/-QMHfBQWQdE)**
+
+
+
  Main Interface
 ![BookQuest Main Interface](Screenshot from 2025-08-02 06-58-15.png)
 *Modern, responsive interface with search functionality and health literacy integration*
@@ -37,7 +50,7 @@ youtube link (https://youtu.be/-QMHfBQWQdE)
 
  1. Local Development
 
-```bash
+
 # Clone the repository
 git clone <repository-url>
 cd s-kevin-25
@@ -56,7 +69,7 @@ PORT=8080
 FLASK_ENV=development
 ```
 
-```bash
+
 # Build and run locally
 docker build -t kevinnizy5/bookquest:v1 .
 docker run -d -p 8080:8080 --env-file .env --name bookquest kevinnizy5/bookquest:v1
@@ -67,7 +80,7 @@ curl http://localhost:8080/api/health
 
  2. Docker Hub Deployment
 
-```bash
+
 # Login to Docker Hub
 docker login
 
@@ -340,11 +353,11 @@ Contributing
 
  Acknowledgments
 
-- **Google Books API** for comprehensive book data
-- **Health.gov** for health literacy resources
-- **Flask** for the Python web framework
-- **HAProxy** for load balancing
-- **Docker** for containerization
+- Google Books API for comprehensive book data
+- Health.gov for health literacy resources
+- Flask for the Python web framework
+- HAProxy for load balancing
+- Docker for containerization
 
  Support
 
