@@ -9,6 +9,18 @@ A modern, containerized web application for discovering books with integrated he
 
 [![BookQuest Demo](https://img.youtube.com/vi/-QMHfBQWQdE/maxresdefault.jpg)](https://youtu.be/-QMHfBQWQdE)
 
+## 🌐 Live Application
+
+**[🚀 Try BookQuest Live](https://bookquest-app.up.railway.app)** - Experience the full application!
+
+**Live Features:**
+- ✅ **Book Search** with Google Books API
+- ✅ **Health Literacy Integration** 
+- ✅ **Advanced Filtering & Sorting**
+- ✅ **Reading Lists Management**
+- ✅ **Responsive Design** (Mobile/Desktop)
+- ✅ **Dark/Light Mode Toggle**
+
   Features
 
  Core Functionality

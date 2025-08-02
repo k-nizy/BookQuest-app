@@ -129,16 +129,47 @@
     );
   }
 
-  // List of health-related book cover images from Pexels to use when no cover is available
+  // Enhanced collection of book cover images for the slider - mix of health, wellness, and general books
   const defaultCoverImages = [
+    // Health & Wellness Books
     'https://images.pexels.com/photos/6697378/pexels-photo-6697378.jpeg?w=200&h=300&fit=crop', // Woman doing yoga - wellness
     'https://images.pexels.com/photos/32121243/pexels-photo-32121243.jpeg?w=200&h=300&fit=crop', // Tranquil meadow - mental health
     'https://images.pexels.com/photos/6684601/pexels-photo-6684601.jpeg?w=200&h=300&fit=crop', // People with face masks - health safety
     'https://images.pexels.com/photos/5288658/pexels-photo-5288658.jpeg?w=200&h=300&fit=crop', // Student with mask - health education
+    
+    // Book & Learning Images
     'https://images.pexels.com/photos/23174954/pexels-photo-23174954.jpeg?w=200&h=300&fit=crop', // Stack of books - learning
-    'https://images.pexels.com/photos/6495641/pexels-photo-6495641.jpeg?w=200&h=300&fit=crop', // Woman with backpack - active lifestyle
     'https://images.pexels.com/photos/18020707/pexels-photo-18020707.jpeg?w=200&h=300&fit=crop', // Woman reading books - knowledge
-    'https://images.pexels.com/photos/8763279/pexels-photo-8763279.jpeg?w=200&h=300&fit=crop'  // Man with face mask - health awareness
+    'https://images.pexels.com/photos/3747468/pexels-photo-3747468.jpeg?w=200&h=300&fit=crop', // Open book with glasses
+    'https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?w=200&h=300&fit=crop', // Books on shelf
+    
+    // Lifestyle & Wellness
+    'https://images.pexels.com/photos/6495641/pexels-photo-6495641.jpeg?w=200&h=300&fit=crop', // Woman with backpack - active lifestyle
+    'https://images.pexels.com/photos/8763279/pexels-photo-8763279.jpeg?w=200&h=300&fit=crop', // Man with face mask - health awareness
+    'https://images.pexels.com/photos/4056530/pexels-photo-4056530.jpeg?w=200&h=300&fit=crop', // Meditation and mindfulness
+    'https://images.pexels.com/photos/4498294/pexels-photo-4498294.jpeg?w=200&h=300&fit=crop', // Healthy food and nutrition
+    
+    // Additional Book Covers
+    'https://images.pexels.com/photos/3747468/pexels-photo-3747468.jpeg?w=200&h=300&fit=crop', // Classic book reading
+    'https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?w=200&h=300&fit=crop', // Library books
+    'https://images.pexels.com/photos/4056530/pexels-photo-4056530.jpeg?w=200&h=300&fit=crop', // Wellness and self-care
+    'https://images.pexels.com/photos/4498294/pexels-photo-4498294.jpeg?w=200&h=300&fit=crop', // Health and nutrition
+    
+    // More Diverse Book Covers
+    'https://images.pexels.com/photos/1544940/pexels-photo-1544940.jpeg?w=200&h=300&fit=crop', // Vintage books
+    'https://images.pexels.com/photos/256520/pexels-photo-256520.jpeg?w=200&h=300&fit=crop', // Coffee and books
+    'https://images.pexels.com/photos/3747468/pexels-photo-3747468.jpeg?w=200&h=300&fit=crop', // Reading glasses
+    'https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?w=200&h=300&fit=crop', // Modern library
+    'https://images.pexels.com/photos/4056530/pexels-photo-4056530.jpeg?w=200&h=300&fit=crop', // Meditation books
+    'https://images.pexels.com/photos/4498294/pexels-photo-4498294.jpeg?w=200&h=300&fit=crop', // Nutrition guides
+    'https://images.pexels.com/photos/1544940/pexels-photo-1544940.jpeg?w=200&h=300&fit=crop', // Classic literature
+    'https://images.pexels.com/photos/256520/pexels-photo-256520.jpeg?w=200&h=300&fit=crop', // Lifestyle books
+    
+    // Your Beautiful Book Images
+    'https://images.pexels.com/photos/159866/pexels-photo-159866.jpeg?w=200&h=300&fit=crop', // Pile of books
+    'https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg?w=200&h=300&fit=crop', // Books filed neatly on shelves
+    'https://images.pexels.com/photos/768125/pexels-photo-768125.jpeg?w=200&h=300&fit=crop', // Books collection
+    'https://images.pexels.com/photos/2846814/pexels-photo-2846814.jpeg?w=200&h=300&fit=crop'  // Eyeglasses on opened book with coffee
   ];
   
   // Pick a random default cover image for books without covers
