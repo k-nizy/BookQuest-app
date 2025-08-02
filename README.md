@@ -7,7 +7,10 @@ A modern, containerized web application for discovering books with integrated he
 
 [ Watch Demo Video](https://youtu.be/-QMHfBQWQdE) - See BookQuest in action!
 
-[![BookQuest Demo](https://img.youtube.com/vi/-QMHfBQWQdE/maxresdefault.jpg)](https://youtu.be/-QMHfBQWQdE)
+SCREENSHOTS
+<img width="1364" height="737" alt="Screenshot from 2025-08-02 06-58-15" src="https://github.com/user-attachments/assets/209f83d4-6f06-40e8-b252-20c218927ec9" />
+<img width="642" height="693" alt="Screenshot from 2025-08-02 05-38-16" src="https://github.com/user-attachments/assets/03aa1456-0b67-4b25-b940-f67d98557d02" />
+
 
 ## 🌐 Live Application
 
