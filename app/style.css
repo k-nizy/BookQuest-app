@@ -1,0 +1,843 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Color variables for the app theme - Trust-building color scheme */
+:root,
+[data-theme="light"] {
+  --bg-color: #f8fafc;
+  --secondary-bg-color: #ffffff;
+  --main-color: #10b981;
+  --accent-blue: #3b82f6;
+  --accent-green: #10b981;
+  --white-color: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  
+  /* Default cover images for books */
+  --default-covers: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200&h=300&fit=crop'),
+                    url('https://images.unsplash.com/photo-1589998059171-988d887df646?w=200&h=300&fit=crop'),
+                    url('https://images.unsplash.com/photo-1532012197267-da84d127e765?w=200&h=300&fit=crop'),
+                    url('https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=200&h=300&fit=crop'),
+                    url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=200&h=300&fit=crop');
+}
+
+/* Dark mode color variables */
+[data-theme="dark"],
+.dark-mode {
+  --bg-color: #0f172a;
+  --secondary-bg-color: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode hero section adjustments */
+[data-theme="dark"] .hero-section::before,
+.dark-mode .hero-section::before {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 50%, rgba(51, 65, 85, 0.8) 100%);
+}
+
+/* Force dark theme when data-theme="dark" */
+[data-theme="dark"] {
+  --bg-color: #0f172a !important;
+  --secondary-bg-color: #1e293b !important;
+  --text-primary: #f1f5f9 !important;
+  --text-secondary: #94a3b8 !important;
+  --border-color: #334155 !important;
+}
+
+/* Light theme specific overrides */
+[data-theme="light"] body,
+body:not(.dark-mode) {
+  background: var(--bg-color) !important;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Force light theme when data-theme="light" */
+[data-theme="light"] {
+  --bg-color: #f8fafc !important;
+  --secondary-bg-color: #ffffff !important;
+  --text-primary: #1e293b !important;
+  --text-secondary: #64748b !important;
+  --border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .bg-gray-50,
+.bg-gray-50:not(.dark-mode) {
+  background-color: var(--bg-color) !important;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="light"] .bg-white,
+.bg-white:not(.dark-mode) {
+  background-color: var(--secondary-bg-color) !important;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="light"] .text-gray-800,
+.text-gray-800:not(.dark-mode) {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .text-gray-700,
+.text-gray-700:not(.dark-mode) {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .text-gray-500,
+.text-gray-500:not(.dark-mode) {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .border-gray-200,
+.border-gray-200:not(.dark-mode) {
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="light"] input,
+[data-theme="light"] select,
+input:not(.dark-mode),
+select:not(.dark-mode) {
+  background-color: var(--secondary-bg-color) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="light"] .bookquest-card,
+.bookquest-card:not(.dark-mode) {
+  background-color: var(--secondary-bg-color) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="light"] .bookquest-card-title,
+.bookquest-card-title:not(.dark-mode) {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .bookquest-card-authors,
+.bookquest-card-authors:not(.dark-mode) {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .bookquest-card-meta,
+.bookquest-card-meta:not(.dark-mode) {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .bookquest-card-desc,
+.bookquest-card-desc:not(.dark-mode) {
+  color: var(--text-secondary) !important;
+}
+
+/* Dark mode specific overrides */
+.dark-mode body {
+  background: var(--bg-color) !important;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .bg-gray-50 {
+  background-color: var(--bg-color) !important;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .bg-white {
+  background-color: var(--secondary-bg-color) !important;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .text-gray-800 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .text-gray-700 {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .text-gray-500 {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .border-gray-200 {
+  border-color: var(--border-color) !important;
+}
+
+.dark-mode .bg-gray-50 {
+  background-color: var(--secondary-bg-color) !important;
+}
+
+.dark-mode input,
+.dark-mode select {
+  background-color: var(--secondary-bg-color) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-mode .bookquest-card {
+  background-color: var(--secondary-bg-color) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-mode .bookquest-card-title {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .bookquest-card-authors {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .bookquest-card-meta {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .bookquest-card-desc {
+  color: var(--text-secondary) !important;
+}
+
+/* Light theme health content styling */
+[data-theme="light"] .bg-gradient-to-r.from-blue-50.to-green-50,
+.bg-gradient-to-r.from-blue-50.to-green-50:not(.dark-mode) {
+  background: linear-gradient(to right, #eff6ff, #f0fdf4) !important;
+  border-color: #dbeafe !important;
+}
+
+[data-theme="light"] .bg-white.rounded-lg,
+.bg-white.rounded-lg:not(.dark-mode) {
+  background-color: #ffffff !important;
+  border-color: #dbeafe !important;
+}
+
+[data-theme="light"] .text-blue-800,
+.text-blue-800:not(.dark-mode) {
+  color: #1e40af !important;
+}
+
+[data-theme="light"] .text-blue-700,
+.text-blue-700:not(.dark-mode) {
+  color: #1d4ed8 !important;
+}
+
+[data-theme="light"] .text-blue-900,
+.text-blue-900:not(.dark-mode) {
+  color: #1e3a8a !important;
+}
+
+/* Light theme form elements */
+[data-theme="light"] .bookquest-select,
+[data-theme="light"] .bookquest-input,
+.bookquest-select:not(.dark-mode),
+.bookquest-input:not(.dark-mode) {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border-color: #e2e8f0 !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="light"] .bookquest-select:focus,
+[data-theme="light"] .bookquest-input:focus,
+.bookquest-select:focus:not(.dark-mode),
+.bookquest-input:focus:not(.dark-mode) {
+  border-color: var(--main-color) !important;
+  box-shadow: 0 0 0 2px var(--main-color) !important;
+}
+
+/* Dark mode health content styling */
+.dark-mode .bg-gradient-to-r.from-blue-50.to-green-50 {
+  background: linear-gradient(to right, var(--secondary-bg-color), var(--bg-color)) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-mode .bg-white.rounded-lg {
+  background-color: var(--secondary-bg-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-mode .text-blue-800 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .text-blue-700 {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .text-blue-900 {
+  color: var(--text-primary) !important;
+}
+
+/* Dark mode form elements */
+.dark-mode .bookquest-select,
+.dark-mode .bookquest-input {
+  background-color: var(--secondary-bg-color) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-mode .bookquest-select:focus,
+.dark-mode .bookquest-input:focus {
+  border-color: var(--main-color) !important;
+  box-shadow: 0 0 0 2px var(--main-color) !important;
+}
+
+/* Theme transition for smooth switching */
+.theme-transition,
+.theme-transition *,
+.theme-transition *:before,
+.theme-transition *:after {
+  transition: all 0.3s ease !important;
+}
+
+/* Set default background and text colors */
+body, html {
+  background: var(--bg-color) !important;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hero section styling */
+.hero-section {
+  background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #3730a3 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+/* Add overlay for better text readability over the book background */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(124, 58, 237, 0.7) 50%, rgba(55, 48, 163, 0.7) 100%);
+  z-index: 1;
+}
+
+.hero-background {
+  background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #3730a3 100%);
+  background-image: url('/books-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  z-index: 0;
+  min-height: 400px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Header styling with dark background */
+.bookquest-header {
+  background: var(--bg-color);
+  box-shadow: 0 2px 12px 0 rgba(31,36,45,0.12);
+}
+.bookquest-header-wave {
+  background: url('data:image/svg+xml;utf8,<svg width="100%" height="48" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C360 48 1080 0 1440 24V48H0V24Z" fill="%2323242d"/></svg>') no-repeat bottom center/cover;
+}
+
+/* Search bar and filter controls styling */
+.bookquest-searchbar, .bookquest-filters {
+  background: var(--secondary-bg-color);
+  color: var(--white-color);
+}
+.bookquest-select, .bookquest-input {
+  background: var(--bg-color);
+  color: var(--white-color);
+  border-color: var(--main-color);
+}
+.bookquest-select:focus, .bookquest-input:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 2px var(--main-color);
+}
+
+/* Button styling for search, filter, and other actions */
+.bookquest-btn-search, .bookquest-btn-filter {
+  background: var(--main-color);
+  color: var(--bg-color);
+  border: 2px solid var(--main-color);
+  box-shadow: 0 0 1rem var(--main-color);
+}
+.bookquest-btn-search:hover, .bookquest-btn-filter:hover {
+  background: transparent;
+  color: var(--main-color);
+  box-shadow: none;
+}
+.bookquest-btn-clear {
+  background: var(--disabled-color);
+  color: var(--bg-color);
+  border: 2px solid var(--main-color);
+}
+.bookquest-btn-clear:hover {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+/* Back to top button styling */
+.bookquest-backtotop {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+.bookquest-backtotop:hover {
+  background: var(--white-color);
+  color: var(--main-color);
+}
+
+/* Book card styling */
+.bookquest-card {
+  background: white;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.bookquest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.bookquest-card .bookquest-card-title {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.bookquest-card .bookquest-card-author {
+  color: #6b7280;
+}
+
+.bookquest-card .bx {
+  color: #10b981 !important;
+}
+.bookquest-card .bookquest-card-title {
+  color: var(--main-color);
+}
+.bookquest-card .bx {
+  color: var(--main-color) !important;
+}
+
+/* Toast Notification System */
+.toast {
+  background: white;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: auto;
+  position: relative;
+  overflow: hidden;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast.success {
+  border-left: 4px solid #10b981;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.toast.error {
+  border-left: 4px solid #ef4444;
+  background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+}
+
+.toast.info {
+  border-left: 4px solid #3b82f6;
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.toast.warning {
+  border-left: 4px solid #f59e0b;
+  background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+}
+
+.toast-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.toast-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.toast.success .toast-icon {
+  background: #10b981;
+  color: white;
+}
+
+.toast.error .toast-icon {
+  background: #ef4444;
+  color: white;
+}
+
+.toast.info .toast-icon {
+  background: #3b82f6;
+  color: white;
+}
+
+.toast.warning .toast-icon {
+  background: #f59e0b;
+  color: white;
+}
+
+.toast-message {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #374151;
+}
+
+.toast-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.toast-close:hover {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* Dark mode support for toasts */
+html.dark .toast {
+  background: #1f2937;
+  color: #f9fafb;
+  border-color: #374151;
+}
+
+html.dark .toast.success {
+  background: linear-gradient(135deg, #064e3b 0%, #1f2937 100%);
+}
+
+html.dark .toast.error {
+  background: linear-gradient(135deg, #7f1d1d 0%, #1f2937 100%);
+}
+
+html.dark .toast.info {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1f2937 100%);
+}
+
+html.dark .toast.warning {
+  background: linear-gradient(135deg, #78350f 0%, #1f2937 100%);
+}
+
+html.dark .toast-message {
+  color: #f9fafb;
+}
+
+html.dark .toast-close:hover {
+  background: #374151;
+  color: #d1d5db;
+}
+
+/* Modal styling improvements */
+#modal-overlay {
+  backdrop-filter: blur(4px);
+}
+
+#modal-box {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#modal-box.show {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+}
+
+/* Responsive toast positioning */
+@media (max-width: 640px) {
+  #toast-container {
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
+    max-width: none;
+  }
+  
+  .toast {
+    min-width: auto;
+    max-width: none;
+  }
+}
+
+/* Enhanced responsive design improvements */
+@media (max-width: 1024px) {
+  .bookquest-results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .bookquest-filters {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .bookquest-results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bookquest-searchbar {
+    flex-direction: column;
+  }
+  
+  .bookquest-btn-search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .bookquest-results {
+    grid-template-columns: 1fr;
+  }
+  
+  .bookquest-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .bookquest-slider-slide {
+    min-width: 100px;
+  }
+  
+  .bookquest-card-img img {
+    height: 180px;
+  }
+}
+
+/* Touch target sizes for mobile accessibility */
+button, .bookquest-collect-toggle {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Enhanced responsive design and accessibility */
+@media (max-width: 1200px) {
+  .bookquest-results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .bookquest-results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bookquest-filters {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .hero-section {
+    min-height: 300px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bookquest-results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bookquest-searchbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .bookquest-btn-search {
+    width: 100%;
+    min-height: 48px; /* Large touch target */
+  }
+  
+  .hero-section {
+    min-height: 250px;
+    padding: 2rem 1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-background {
+    background-position: center center;
+  }
+  
+  .bookquest-card {
+    min-height: 400px;
+  }
+  
+  /* Improve touch targets on mobile */
+  button, .bookquest-collect-toggle {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bookquest-results {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-section h1 {
+    font-size: 1.75rem;
+  }
+  
+  .bookquest-slider-slide {
+    min-width: 180px;
+  }
+  
+  .bookquest-card-img img {
+    height: 180px;
+  }
+  
+  .bookquest-card {
+    min-height: 350px;
+  }
+  
+  /* Ensure all interactive elements are accessible */
+  input, select, button {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Accessibility improvements */
+.bookquest-card:focus-within {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+button:focus,
+input:focus,
+select:focus {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000000;
+    --text-secondary: #000000;
+  }
+  
+  .bookquest-card {
+    border: 2px solid var(--border-color);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Large touch targets for better accessibility */
+.bookquest-collect-toggle {
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Improved focus indicators */
+.bookquest-card button:focus {
+  box-shadow: 0 0 0 3px var(--accent-blue);
+  border-radius: 50%;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Theme toggle button styling with smooth animations */
+.bookquest-dark-toggle {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bookquest-dark-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.bookquest-dark-toggle i {
+  transition: all 0.3s ease;
+}
+
+.bookquest-dark-toggle:hover i {
+  transform: rotate(180deg);
+}
+
+/* Theme toggle ripple effect */
+.bookquest-dark-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.bookquest-dark-toggle:active::before {
+  width: 100px;
+  height: 100px;
+} 

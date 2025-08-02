@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  web-01:
+    build: ./web
+    container_name: web-01
+    networks:
+      lablan:
+        ipv4_address: 172.20.0.11
+    ports:
+      - "2211:22"
+      - "8080:8080"
+    environment:
+      - HOSTNAME=web-01
+    restart: unless-stopped
+
+  web-02:
+    build: ./web
+    container_name: web-02
+    networks:
+      lablan:
+        ipv4_address: 172.20.0.12
+    ports:
+      - "2212:22"
+      - "8081:8080"
+    environment:
+      - HOSTNAME=web-02
+    restart: unless-stopped
+
+  lb-01:
+    build: ./lb
+    container_name: lb-01
+    networks:
+      lablan:
+        ipv4_address: 172.20.0.10
+    ports:
+      - "2210:22"
+      - "8082:80"
+    depends_on:
+      - web-01
+      - web-02
+    restart: unless-stopped
+
+networks:
+  lablan:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16 
