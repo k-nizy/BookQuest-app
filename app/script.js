@@ -129,7 +129,7 @@
     );
   }
 
-  // Enhanced collection of book cover images for the slider - mix of health, wellness, and general books
+  // Clean collection of unique book cover images for the slider - no duplicates!
   const defaultCoverImages = [
     // Health & Wellness Books
     'https://images.pexels.com/photos/6697378/pexels-photo-6697378.jpeg?w=200&h=300&fit=crop', // Woman doing yoga - wellness
@@ -149,23 +149,11 @@
     'https://images.pexels.com/photos/4056530/pexels-photo-4056530.jpeg?w=200&h=300&fit=crop', // Meditation and mindfulness
     'https://images.pexels.com/photos/4498294/pexels-photo-4498294.jpeg?w=200&h=300&fit=crop', // Healthy food and nutrition
     
-    // Additional Book Covers
-    'https://images.pexels.com/photos/3747468/pexels-photo-3747468.jpeg?w=200&h=300&fit=crop', // Classic book reading
-    'https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?w=200&h=300&fit=crop', // Library books
-    'https://images.pexels.com/photos/4056530/pexels-photo-4056530.jpeg?w=200&h=300&fit=crop', // Wellness and self-care
-    'https://images.pexels.com/photos/4498294/pexels-photo-4498294.jpeg?w=200&h=300&fit=crop', // Health and nutrition
-    
-    // More Diverse Book Covers
+    // Additional Unique Book Covers
     'https://images.pexels.com/photos/1544940/pexels-photo-1544940.jpeg?w=200&h=300&fit=crop', // Vintage books
     'https://images.pexels.com/photos/256520/pexels-photo-256520.jpeg?w=200&h=300&fit=crop', // Coffee and books
-    'https://images.pexels.com/photos/3747468/pexels-photo-3747468.jpeg?w=200&h=300&fit=crop', // Reading glasses
-    'https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?w=200&h=300&fit=crop', // Modern library
-    'https://images.pexels.com/photos/4056530/pexels-photo-4056530.jpeg?w=200&h=300&fit=crop', // Meditation books
-    'https://images.pexels.com/photos/4498294/pexels-photo-4498294.jpeg?w=200&h=300&fit=crop', // Nutrition guides
-    'https://images.pexels.com/photos/1544940/pexels-photo-1544940.jpeg?w=200&h=300&fit=crop', // Classic literature
-    'https://images.pexels.com/photos/256520/pexels-photo-256520.jpeg?w=200&h=300&fit=crop', // Lifestyle books
     
-    // Your Beautiful Book Images
+    // Your Beautiful Book Images (Your Pexels Links)
     'https://images.pexels.com/photos/159866/pexels-photo-159866.jpeg?w=200&h=300&fit=crop', // Pile of books
     'https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg?w=200&h=300&fit=crop', // Books filed neatly on shelves
     'https://images.pexels.com/photos/768125/pexels-photo-768125.jpeg?w=200&h=300&fit=crop', // Books collection
