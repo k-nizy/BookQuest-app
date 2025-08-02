@@ -1,0 +1,24 @@
+# Git files
+.git/
+.gitignore
+
+# Documentation files
+README.md
+DEMO_SCRIPT.md
+PROJECT_STRUCTURE.md
+
+# Docker compose (not needed for Railway)
+compose.yml
+
+# Load balancer files (not needed for Railway)
+lb/
+haproxy.cfg
+
+# Demo scripts
+demo.sh
+
+# Screenshots
+screenshots/
+
+# Web container files (not needed for Railway)
+web/ 
