@@ -129,35 +129,34 @@
     );
   }
 
-  // Clean collection of unique book cover images for the slider - using reliable placeholder images
+  // Beautiful collection of Pexels book and lifestyle images for the slider
   const defaultCoverImages = [
-    // Health & Wellness Books
-    'https://via.placeholder.com/200x300/4CAF50/FFFFFF?text=Health+Wellness', // Health & Wellness
-    'https://via.placeholder.com/200x300/2196F3/FFFFFF?text=Mental+Health', // Mental Health
-    'https://via.placeholder.com/200x300/FF9800/FFFFFF?text=Health+Safety', // Health Safety
-    'https://via.placeholder.com/200x300/9C27B0/FFFFFF?text=Health+Education', // Health Education
+    // Global & Educational
+    'https://images.pexels.com/photos/1004783/pexels-photo-1004783.jpeg?w=200&h=300&fit=crop', // Globe
+    'https://images.pexels.com/photos/3368816/pexels-photo-3368816.jpeg?w=200&h=300&fit=crop', // Pine cones on books
     
-    // Book & Learning Images
-    'https://via.placeholder.com/200x300/607D8B/FFFFFF?text=Learning+Books', // Learning Books
-    'https://via.placeholder.com/200x300/795548/FFFFFF?text=Reading+Knowledge', // Reading Knowledge
-    'https://via.placeholder.com/200x300/3F51B5/FFFFFF?text=Book+Glasses', // Book with Glasses
-    'https://via.placeholder.com/200x300/009688/FFFFFF?text=Library+Shelf', // Library Shelf
+    // Book Collections
+    'https://images.pexels.com/photos/1666320/pexels-photo-1666320.jpeg?w=200&h=300&fit=crop', // Assorted books
+    'https://images.pexels.com/photos/207636/pexels-photo-207636.jpeg?w=200&h=300&fit=crop', // Labeled book lot
+    'https://images.pexels.com/photos/1261180/pexels-photo-1261180.jpeg?w=200&h=300&fit=crop', // Library with red stairs
+    'https://images.pexels.com/photos/159702/pexels-photo-159702.jpeg?w=200&h=300&fit=crop', // Books in wooden shelf
     
-    // Lifestyle & Wellness
-    'https://via.placeholder.com/200x300/8BC34A/FFFFFF?text=Active+Lifestyle', // Active Lifestyle
-    'https://via.placeholder.com/200x300/E91E63/FFFFFF?text=Health+Awareness', // Health Awareness
-    'https://via.placeholder.com/200x300/673AB7/FFFFFF?text=Meditation', // Meditation
-    'https://via.placeholder.com/200x300/FF5722/FFFFFF?text=Nutrition', // Nutrition
+    // Reading & Learning
+    'https://images.pexels.com/photos/256431/pexels-photo-256431.jpeg?w=200&h=300&fit=crop', // Man sitting on floor reading
+    'https://images.pexels.com/photos/711009/pexels-photo-711009.jpeg?w=200&h=300&fit=crop', // Group reading books
+    'https://images.pexels.com/photos/1326947/pexels-photo-1326947.jpeg?w=200&h=300&fit=crop', // Woman reading books
+    'https://images.pexels.com/photos/7970653/pexels-photo-7970653.jpeg?w=200&h=300&fit=crop', // Woman with tablet and children
     
-    // Additional Unique Book Covers
-    'https://via.placeholder.com/200x300/795548/FFFFFF?text=Vintage+Books', // Vintage Books
-    'https://via.placeholder.com/200x300/8D6E63/FFFFFF?text=Coffee+Books', // Coffee and Books
+    // Wellness & Lifestyle
+    'https://images.pexels.com/photos/3224344/pexels-photo-3224344.jpeg?w=200&h=300&fit=crop', // Person on cliff edge
+    'https://images.pexels.com/photos/3822583/pexels-photo-3822583.jpeg?w=200&h=300&fit=crop', // Woman meditating
+    'https://images.pexels.com/photos/4099235/pexels-photo-4099235.jpeg?w=200&h=300&fit=crop', // Vegan breakfast
+    'https://images.pexels.com/photos/936075/pexels-photo-936075.jpeg?w=200&h=300&fit=crop', // Woman in sports bra
+    'https://images.pexels.com/photos/2821823/pexels-photo-2821823.jpeg?w=200&h=300&fit=crop', // Self-care signage
     
-    // Your Beautiful Book Images (Your Pexels Links)
-    'https://images.pexels.com/photos/159866/pexels-photo-159866.jpeg?w=200&h=300&fit=crop', // Pile of books
-    'https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg?w=200&h=300&fit=crop', // Books filed neatly on shelves
-    'https://images.pexels.com/photos/768125/pexels-photo-768125.jpeg?w=200&h=300&fit=crop', // Books collection
-    'https://images.pexels.com/photos/2846814/pexels-photo-2846814.jpeg?w=200&h=300&fit=crop'  // Eyeglasses on opened book with coffee
+    // Health & Safety
+    'https://images.pexels.com/photos/7252242/pexels-photo-7252242.jpeg?w=200&h=300&fit=crop', // People with face masks on escalator
+    'https://images.pexels.com/photos/5211435/pexels-photo-5211435.jpeg?w=200&h=300&fit=crop'  // Student with face mask
   ];
   
   // Pick a random default cover image for books without covers
