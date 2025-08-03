@@ -138,6 +138,7 @@
     // Book Collections
     'https://images.pexels.com/photos/1666320/pexels-photo-1666320.jpeg?w=200&h=300&fit=crop', // Assorted books
     'https://images.pexels.com/photos/207636/pexels-photo-207636.jpeg?w=200&h=300&fit=crop', // Labeled book lot
+    'https://images.pexels.com/photos/32121243/pexels-photo-32121243.jpeg?w=200&h=300&fit=crop', // Tranquil meadow landscape
     'https://images.pexels.com/photos/159702/pexels-photo-159702.jpeg?w=200&h=300&fit=crop', // Books in wooden shelf
     
     // Reading & Learning
@@ -188,7 +189,7 @@
     defaultCoverImages.forEach((img, i) => {
       const slide = document.createElement('div');
       slide.className = 'bookquest-slider-slide';
-      slide.innerHTML = `<img src="${img}" alt="Book cover example ${i+1}" loading="lazy" />`;
+      slide.innerHTML = `<img src="${img}" alt="" loading="lazy" onerror="this.src='https://images.pexels.com/photos/32121243/pexels-photo-32121243.jpeg?w=200&h=300&fit=crop'" />`;
       sliderTrack.appendChild(slide);
     });
     updateSliderPosition();
